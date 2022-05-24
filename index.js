@@ -8,11 +8,10 @@ class Formatter {
    }
 
    static titleize(string) {
-      let alwaysLowerCase = ['the','a','an','but','of','and','for','at','by','from']; //prettier-ignore
       return string
          .split(' ')
          .map((word, index) => {
-            return index != 0 && alwaysLowerCase.includes(word)
+            return index != 0 && ['the','a','an','but','of','and','for','at','by','from'].includes(word) //prettier-ignore
                ? this.sanitize(word)
                : this.capitalize(word);
          })
